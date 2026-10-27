@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Page metadata for SEO and browser title bar -->
+<title>Marci Metzger Homes | Pahrump Realtor, Real Estate Agent</title>
+<meta name="description" content="Marci Metzger Homes - Pahrump, NV. Over two decades in real estate. Licensed Broker in Seattle, now serving Southern Nevada as Pahrump's top real estate agent.">
+
+<!-- External Google Fonts preconnections and stylesheet imports -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Global Site Header: Contains Branding Logo, Mobile Toggle Button, and Navigation Menu -->
+<header class="site-header">
+  <!-- Brand logo & sub-label links to top of page -->
+  <a class="brand" href="#top"><span class="mono">MM</span><span class="bt">Marci Metzger<small>The Ridge Realty Group</small></span></a>
+  
+  <!-- Hamburger menu button for smaller screens / mobile navigation -->
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+  
+  <!-- Navigation Links -->
+  <nav id="nav">
+    <a href="#about">About</a><a href="#search">Find a Home</a><a href="#services">Services</a><a href="#gallery">Gallery</a>
+    <a class="btn" href="#contact">Contact Marci</a>
+  </nav>
+</header>
+
+<main id="top">
+<!-- Hero Section: Main landing area with primary call-to-action and key statistics -->
+<section class="hero">
+  <figure class="frame reveal"><img src="images/home-d.jpg" alt="Modern white home with a swimming pool" width="1000" height="663"></figure>
+  <div class="reveal">
+    <p class="eyebrow">Pahrump Realtor &middot; Marci Metzger &ndash; The Ridge Realty Group</p>
+    <h1>Real estate is personal. <em>Your experience should be, too.</em></h1>
+    <p class="lead">Over two decades in real estate. Licensed broker in Seattle, now serving Southern Nevada as Pahrump's top real estate agent.</p>
+
+    <!-- Key Statistics display grid -->
+    <div class="stats"><div><b>28+</b><span>Years in real estate</span></div><div><b>$28.5M</b><span>Sold in 2021</span></div><div><b>~90</b><span>Clients helped</span></div></div>
+    
+    <!-- Primary CTA actions -->
+    <div class="cta"><a class="btn" href="tel:+12069196886">Call now</a><a class="link" href="#contact">Let's talk about your move &nearr;</a></div>
+  </div>
+</section>
+
+<!-- Logo Marquee: Endless scrolling banner showcasing industry affiliations and certifications -->
+<section class="logos" aria-label="Memberships and affiliations">
+  <div class="marquee"><div class="track" id="track">
+    <img src="images/ridge-logo.png" alt="The Ridge Realty Group" width="90" height="90">
+    <img src="images/chamber.png" alt="Pahrump Valley Chamber of Commerce" width="90" height="90">
+    <img src="images/realtor.png" alt="REALTOR" width="100" height="90">
+    <img src="images/equal-housing.png" alt="Equal Housing Opportunity" width="90" height="90">
+  </div></div>
+</section>
+
+<!-- About Section: Agent biography and contact snippet -->
+<section class="section" id="about">
+  <div class="split rev">
+    <div class="reveal">
+      <p class="eyebrow">Marci Metzger</p>
+      <h2>Realtor for nearly 3 decades</h2>
+      <p>Over two decades in real estate. Licensed broker in Seattle, now serving Southern Nevada as Pahrump's top real estate agent.</p>
+      <a class="phone" href="tel:+12069196886">206-919-6886</a>
+    </div>
+    <figure class="frame flip reveal"><img src="images/marci.jpg" alt="Marci Metzger, realtor" width="730" height="730"></figure>
+  </div>
+</section>
+
+<!-- Highlights / Testimonial Columns Section: Showcases sales accomplishments and services -->
+<section class="section alt" id="sold">
+  <div class="head reveal"><p class="eyebrow">Why clients choose us</p><h2>Get it sold</h2></div>
+  <div class="cols">
+    <article class="reveal"><span class="num"></span><h3>Top Residential Sales Last 5 Years</h3><p>We helped nearly 90 clients in 2021, and closed 28.5 million in sales!</p><p>Our team works hard everyday to grow and learn, so that we may continue to excel in our market. Our clients deserve our best, &amp; we want to make sure our best is better every year.</p></article>
+    <article class="reveal"><span class="num"></span><h3>Don't Just List it...</h3><p>Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.</p></article>
+    <article class="reveal"><span class="num"></span><h3>Guide to Buyers</h3><p>Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis, upgrades lists, contractors on speed dial, &amp; more!</p></article>
+  </div>
+</section>
+
+<!-- Property Search Section: Interactive search form for filtering listings -->
+<section class="section" id="search">
+  <div class="head reveal"><p class="eyebrow">Listings</p><h2>Find your dream home</h2></div>
+  <form class="search reveal" id="searchForm">
+    <label>Location<input type="text" name="location" placeholder="City, neighborhood or ZIP"></label>
+    <label>Type<select><option>Any</option><option>House</option><option>Condo</option><option>Land</option><option>Commercial</option></select></label>
+    <label>Sort by<select><option>Newest</option><option>Oldest</option><option>Least Expensive to Most</option><option>Most Expensive to Least</option><option>Bedrooms (Low to High)</option><option>Bedrooms (High to Low)</option><option>Bathrooms (Low to High)</option><option>Bathrooms (High to Low)</option></select></label>
+    <label>Bedrooms<select><option>Any Number</option><option>Studio</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option><option>6+</option></select></label>
+    <label>Baths<select><option>Any Number</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option><option>6+</option></select></label>
+    <label>Min price<input type="number" min="0" placeholder="$ Min"></label>
+    <label>Max price<input type="number" min="0" placeholder="$ Max"></label>
+    <button class="btn" type="submit">Search now</button>
+  </form>
+</section>
+
+<!-- Photo Gallery Section: Interactive image grid with lightbox modal triggers -->
+<section class="section alt" id="gallery">
+  <div class="head reveal"><p class="eyebrow">Inside &amp; out</p><h2>Photo gallery</h2></div>
+  <div class="gallery">
+    <button class="g big reveal" data-src="images/home-d.jpg" aria-label="Enlarge: modern home with pool"><img src="images/home-d.jpg" alt="Modern white home with a swimming pool" loading="lazy"></button>
+    <button class="g reveal" data-src="images/home-a.jpg" aria-label="Enlarge: living room"><img src="images/home-a.jpg" alt="Bright modern living room with timber feature wall" loading="lazy"></button>
+    <button class="g reveal" data-src="images/home-b.jpg" aria-label="Enlarge: living room with staircase"><img src="images/home-b.jpg" alt="Living room with floating staircase and a golden retriever" loading="lazy"></button>
+    <button class="g reveal" data-src="images/home-c.jpg" aria-label="Enlarge: dining area"><img src="images/home-c.jpg" alt="Dining area with a steel staircase" loading="lazy"></button>
+    <button class="g reveal" data-src="images/kitchen.jpg" aria-label="Enlarge: kitchen"><img src="images/kitchen.jpg" alt="Open kitchen with marble island" loading="lazy"></button>
+    <button class="g full reveal" data-src="images/home-pool.jpg" aria-label="Enlarge: poolside home"><img src="images/home-pool.jpg" alt="Southwestern home with pool at dusk" loading="lazy"></button>
+  </div>
+</section>
+
+<!-- Services Section: Detailed overview of offered real estate solutions -->
+<section class="section" id="services">
+  <div class="head reveal"><p class="eyebrow">Our services</p><h2>Real estate done right</h2></div>
+  <div class="services">
+    <div class="svc reveal"><figure class="frame"><img src="images/keys.jpg" alt="" loading="lazy"></figure><div><h3>Commercial &amp; Residential</h3><p>Nervous about your property adventure? Don&rsquo;t be. Whether you're getting ready to buy or sell your residence, looking at investment properties, or just curious about the markets, our team ensures you get the best experience possible!</p></div></div>
+    <div class="svc rev reveal"><figure class="frame flip"><img src="images/home-pool.jpg" alt="" loading="lazy"></figure><div><h3>Large or small, we find it</h3><p>Large or small, condo or mansion, we can find it and get at the price that's right. Fixer-uppers? Luxury? We can help with all of it! We live, work, and play in this community. Happy to help you find where to put your hard-earned dollars.</p></div></div>
+    <div class="svc reveal"><figure class="frame"><img src="images/kitchen.jpg" alt="" loading="lazy"></figure><div><h3>Rely on Expertise</h3><p>If you have questions about affordability, credit, and loan options, trust us to connect you with the right people to get the answers you need in a timely fashion. We make sure you feel confident and educated every step of the way.</p></div></div>
+  </div>
+</section>
+
+<!-- Contact & Location Section: Contains message contact form, business details, dynamic office status, and embedded map -->
+<section class="section alt" id="contact">
+  <div class="head reveal"><p class="eyebrow">Get in touch</p><h2>Call or visit</h2></div>
+  <div class="contact">
+    <!-- Contact Form -->
+    <form class="msg reveal" id="msgForm"><h3>Send message</h3>
+      <label>Name<input type="text" required autocomplete="name"></label>
+      <label>Email*<input type="email" required autocomplete="email"></label>
+      <button class="btn" type="submit">Send</button>
+      <small id="formNote" role="status"></small>
+      <small class="muted">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</small>
+    </form>
+
+    <!-- Business Contact Info & Live Hours Indicator -->
+    <div class="info reveal">
+      <h3>Marci Metzger &ndash; The Ridge Realty Group</h3>
+      <p>3190 HW-160, Suite F, Pahrump, Nevada 89048, United States</p>
+      <p><a href="tel:+12069196886">(206) 919-6886</a></p>
+      <h4>Office hours</h4>
+      <p>Open daily 8:00 am &ndash; 7:00 pm <span class="open" id="openNow"></span><br>Appointments outside office hours available upon request. Just call!</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=3190+HW-160+Suite+F+Pahrump+Nevada+89048">Get directions</a>
+      
+      <!-- Social Media Links -->
+      <div class="social">
+        <a href="https://www.facebook.com/MarciHomes/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/marcimetzger_theridge/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/marci-metzger-30642496/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.yelp.com/biz/xr3yQN_m2SgO0R_7S6p62w" target="_blank" rel="noopener">Yelp</a>
+      </div>
+    </div>
+
+    <!-- Embedded Google Map -->
+    <iframe class="map reveal" title="Map to The Ridge Realty Group" loading="lazy" src="https://maps.google.com/maps?q=3190+HW-160+Suite+F+Pahrump+Nevada+89048&output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<!-- Page Footer: Copyright information and Equal Housing logo -->
+<footer>
+  <img src="images/equal-housing.png" alt="Equal Housing Opportunity" width="40" height="40">
+  <p>Copyright &copy; 2026 Marci METZGER - All Rights Reserved</p>
+</footer>
+
+<!-- Cookie Consent Banner (Managed via script.js using localStorage) -->
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie notice" hidden>
+  <p><b>This website uses cookies.</b> We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+  <button class="btn" id="cookieOk">Accept</button>
+</div>
+
+<!-- Modal Lightbox for enlarged gallery images -->
+<div class="lightbox" id="lightbox" hidden><button aria-label="Close">&times;</button><img alt=""></div>
+
+<!-- JavaScript Integration -->
+<script src="script.js"></script>
+</body>
+</html>

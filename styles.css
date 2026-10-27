@@ -1,0 +1,852 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+  --bg: #f8f7f3;
+  --alt: #f0eee7;
+  --ink: #1d2b28;
+  --green: #1f3530;
+  --gold: #a8884f;
+  --gold-d: #876b38;
+  --muted: #5d6764;
+  --line: #e0ddd3
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0
+}
+
+/* Base Document Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  overflow-x: hidden
+}
+
+body {
+  font: 16px/1.75 "DM Sans", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink)
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block
+}
+
+a {
+  color: inherit
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px clamp(20px, 8vw, 160px);
+  background: rgba(248, 247, 243, .92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line)
+}
+
+/* Brand Monogram & Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none
+}
+
+.mono {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #bdb59f;
+  font: 600 1.3rem "Playfair Display", serif;
+  color: var(--gold)
+}
+
+.bt {
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  line-height: 1.3
+}
+
+.bt small {
+  display: block;
+  font-weight: 400;
+  font-size: .66rem;
+  letter-spacing: .2em;
+  color: var(--muted)
+}
+
+/* Desktop Navigation Menu Links */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 26px
+}
+
+nav a:not(.btn) {
+  text-decoration: none;
+  font-weight: 500
+}
+
+nav a:not(.btn):hover {
+  color: var(--gold-d)
+}
+
+/* Mobile Menu Toggle Icon (Hamburger) */
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  color: var(--green)
+}
+
+.menu-btn i {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background: currentColor;
+  transition: .25s
+}
+
+.menu-btn i:first-child {
+  top: 15px
+}
+
+.menu-btn i:last-child {
+  top: 23px
+}
+
+/* Morphing Hamburger lines into an 'X' close state */
+.menu-btn[aria-expanded=true] i:first-child {
+  top: 19px;
+  transform: rotate(45deg)
+}
+
+.menu-btn[aria-expanded=true] i:last-child {
+  top: 19px;
+  transform: rotate(-45deg)
+}
+
+/* Reusable UI Elements: Buttons & Typography */
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  border: 0;
+  padding: 15px 26px;
+  font: 500 .95rem "DM Sans", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .25s
+}
+
+.btn:hover {
+  background: var(--gold-d);
+  transform: translateY(-2px)
+}
+
+.link {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold-d);
+  text-decoration: none
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px
+}
+
+.eyebrow {
+  font-size: .74rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-d);
+  margin-bottom: 20px
+}
+
+/* ==========================================================================
+   3. HERO SECTION & STATS
+   ========================================================================== */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center;
+  padding: 140px clamp(20px, 5vw, 56px) 80px
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 24px
+}
+
+em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--gold)
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 28px
+}
+
+.stats {
+  display: flex;
+  gap: clamp(20px, 4vw, 44px);
+  flex-wrap: wrap;
+  border-block: 1px solid var(--line);
+  padding: 22px 0;
+  margin-bottom: 30px
+}
+
+.stats b {
+  display: block;
+  font: 600 1.9rem "Playfair Display", serif;
+  color: var(--gold-d);
+  line-height: 1.2
+}
+
+.stats span {
+  font-size: .8rem;
+  color: var(--muted)
+}
+
+.cta {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+/* Decorative Framing for Hero and Section Images */
+.frame {
+  position: relative;
+  isolation: isolate
+}
+
+.frame img {
+  width: 100%;
+  aspect-ratio: 10/9;
+  object-fit: cover
+}
+
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 22px -22px -22px 22px;
+  border: 1px solid var(--gold);
+  z-index: -1
+}
+
+.frame.flip::after {
+  inset: 22px 22px -22px -22px
+}
+
+/* ==========================================================================
+   4. LOGO MARQUEE (INFINITE SCROLL)
+   ========================================================================== */
+.logos {
+  padding: 36px 0;
+  border-block: 1px solid var(--line);
+  overflow: hidden
+}
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent)
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll 30s linear infinite
+}
+
+.marquee:hover .track {
+  animation-play-state: paused
+}
+
+.track img {
+  height: 76px;
+  width: auto;
+  margin: 0 clamp(32px, 6vw, 80px);
+  transition: transform .3s
+}
+
+.track img:hover {
+  transform: scale(1.08)
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+/* ==========================================================================
+   5. SECTIONS GENERAL & FEATURE COLUMNS
+   ========================================================================== */
+.section {
+  padding: clamp(64px, 9vw, 110px) clamp(20px, 5vw, 56px)
+}
+
+.section.alt {
+  background: var(--alt)
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  margin-bottom: 20px
+}
+
+.head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 52px
+}
+
+.split {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 430px);
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center
+}
+
+.split p:not(.eyebrow) {
+  color: var(--muted);
+  margin-bottom: 22px
+}
+
+.phone {
+  font: 600 1.7rem "Playfair Display", serif;
+  text-decoration: none;
+  color: var(--green);
+  border-bottom: 2px solid var(--gold)
+}
+
+.cols {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+}
+
+.cols article {
+  padding: 8px clamp(20px, 3vw, 40px);
+  border-left: 1px solid #d6d2c4
+}
+
+.cols article:first-child {
+  border-left: 0;
+  padding-left: 0
+}
+
+.num {
+  font: italic 500 2.4rem "Playfair Display", serif;
+  color: var(--gold)
+}
+
+.cols h3 {
+  font-size: 1.5rem;
+  margin: 6px 0 14px
+}
+
+.cols p {
+  color: var(--muted);
+  margin-bottom: 12px
+}
+
+/* ==========================================================================
+   6. SEARCH FORM
+   ========================================================================== */
+.search {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  background: #fff;
+  padding: 34px;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 50px rgba(31, 53, 48, .08);
+  align-items: end
+}
+
+.search .btn {
+  height: 50px
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted)
+}
+
+input,
+select,
+textarea {
+  font: 400 1rem "DM Sans", sans-serif;
+  padding: 12px;
+  border: 1px solid var(--line);
+  width: 100%;
+  color: var(--ink);
+  background: var(--bg);
+  border-radius: 0
+}
+
+input:focus,
+select:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px
+}
+
+/* ==========================================================================
+   7. PHOTO GALLERY
+   ========================================================================== */
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(150px, 18vw, 240px);
+  gap: 14px
+}
+
+.g {
+  border: 0;
+  padding: 0;
+  background: none;
+  overflow: hidden;
+  cursor: zoom-in
+}
+
+.g.big {
+  grid-column: span 2;
+  grid-row: span 2
+}
+
+.g.wide {
+  grid-column: span 2
+}
+
+.g.full {
+  grid-column: 1/-1
+}
+
+.g img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s
+}
+
+.g:hover img {
+  transform: scale(1.06)
+}
+
+/* ==========================================================================
+   8. SERVICES
+   ========================================================================== */
+.services {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(56px, 8vw, 96px)
+}
+
+.svc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 6vw, 80px);
+  align-items: center
+}
+
+.svc.rev figure {
+  order: 2
+}
+
+.svc h3 {
+  font-size: 1.9rem;
+  margin-bottom: 14px
+}
+
+.svc p {
+  color: var(--muted)
+}
+
+/* ==========================================================================
+   9. CONTACT FORM, INFORMATION & MAP
+   ========================================================================== */
+.contact {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px
+}
+
+.msg,
+.info {
+  background: #fff;
+  padding: 34px;
+  border: 1px solid var(--line)
+}
+
+.msg {
+  display: grid;
+  gap: 16px;
+  align-content: start
+}
+
+.info h3,
+.msg h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px
+}
+
+.info h4 {
+  margin: 18px 0 4px;
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-d)
+}
+
+.info p {
+  margin-bottom: 12px;
+  color: var(--muted)
+}
+
+.info a:not(.btn) {
+  color: var(--green);
+  font-weight: 600
+}
+
+/* Open / Closed Hours Badge Styles */
+.open {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  background: #e5f0e8;
+  color: #1f6b35
+}
+
+.open.closed {
+  background: #f6e3e0;
+  color: #9b3326
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase
+}
+
+.muted {
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.5
+}
+
+.muted a {
+  text-decoration: underline
+}
+
+#formNote {
+  color: var(--gold-d);
+  font-weight: 600
+}
+
+.map {
+  grid-column: 1/-1;
+  width: 100%;
+  height: 340px;
+  border: 0
+}
+
+/* ==========================================================================
+   10. FOOTER, COOKIE NOTICE & LIGHTBOX MODAL
+   ========================================================================== */
+footer {
+  background: var(--green);
+  color: #cdd6d2;
+  padding: 32px 20px;
+  text-align: center;
+  font-size: .85rem;
+  display: grid;
+  justify-items: center;
+  gap: 10px
+}
+
+footer img {
+  background: #fff;
+  padding: 3px
+}
+
+/* Fixed Cookie Banner */
+.cookie {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  max-width: 780px;
+  margin: auto;
+  z-index: 60;
+  background: var(--green);
+  color: #fff;
+  padding: 18px 22px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: .85rem;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .35)
+}
+
+.cookie .btn {
+  background: var(--gold);
+  flex: none
+}
+
+.cookie[hidden],
+.lightbox[hidden] {
+  display: none
+}
+
+/* Fullscreen Gallery Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(14, 24, 21, .94);
+  display: grid;
+  place-items: center;
+  padding: 20px
+}
+
+.lightbox img {
+  max-height: 88vh
+}
+
+.lightbox button {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 2.4rem;
+  cursor: pointer
+}
+
+/* ==========================================================================
+   11. SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s, transform .8s
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none
+}
+
+/* ==========================================================================
+   12. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+/* Tablet Layout Adjustments */
+@media(max-width:960px) {
+
+  .hero,
+  .split,
+  .svc,
+  .contact {
+    grid-template-columns: 1fr
+  }
+
+  .hero {
+    padding-top: 120px
+  }
+
+  .hero figure {
+    max-width: 620px
+  }
+
+  .split.rev figure {
+    order: -1
+  }
+
+  .svc.rev figure {
+    order: 0
+  }
+
+  .search {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .search .btn {
+    grid-column: 1/-1
+  }
+
+  .cols article {
+    border-left: 0;
+    border-top: 1px solid #d6d2c4;
+    padding: 28px 0
+  }
+
+  .cols article:first-child {
+    border-top: 0
+  }
+
+  .frame {
+    margin-right: 16px
+  }
+
+  .frame::after,
+  .frame.flip::after {
+    inset: 16px -16px -16px 16px
+  }
+
+  .split figure,
+  .svc figure {
+    max-width: 440px
+  }
+}
+
+/* Mobile Layout & Navigation Flyout */
+@media(max-width:760px) {
+  .menu-btn {
+    display: block
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg);
+    padding: 8px 24px 22px;
+    display: none;
+    box-shadow: 0 14px 24px rgba(0, 0, 0, .1);
+    border-bottom: 1px solid var(--line)
+  }
+
+  nav.open {
+    display: flex
+  }
+
+  nav a {
+    padding: 12px 0
+  }
+
+  nav .btn {
+    text-align: center;
+    margin-top: 10px
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .bt {
+    font-size: .8rem;
+    letter-spacing: .12em
+  }
+}
+
+/* Small Smartphone Screen Adjustments */
+@media(max-width:480px) {
+  .search {
+    grid-template-columns: 1fr;
+    padding: 22px
+  }
+
+  .cookie {
+    flex-direction: column;
+    align-items: flex-start
+  }
+
+  .track img {
+    height: 60px
+  }
+
+  .mono {
+    width: 46px;
+    height: 46px
+  }
+}
+
+/* Accessibility: Accessibility setting for reduced motion preferences */
+@media(prefers-reduced-motion:reduce) {
+  .track {
+    animation: none
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none
+  }
+
+  html {
+    scroll-behavior: auto
+  }
+}
